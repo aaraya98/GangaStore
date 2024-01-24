@@ -1,0 +1,134 @@
+/* */
+/* Style for categoriesproducts */
+#containercategoriesproducts{
+    width: 100%;
+    height: auto;
+    #containercatproducts{
+        width: 94%;
+        margin: auto;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        gap: 10px;
+        display: grid;
+        grid-template-columns: 0.3fr 1.7fr;
+        grid-template-rows: auto;
+        .acordeoncatproducts{
+            @include positiongrid(1,2,1,2);
+        }
+        .contcatproducts{
+            @include positiongrid(2,3,1,2);
+            .filtrosecundario{
+                display: flex;
+                justify-content: end;
+                gap: 15px;
+                margin-right: 35px;
+                #filtsecundario{
+                    border: 2px solid black;
+                    border-radius: 5px;
+                }
+            }
+            .catproducts{
+                .products{
+                    @include flexaligncontent(start);
+                    flex-wrap: wrap;
+                    width: 100%;
+                    height: auto;
+                    margin-top: 1rem;
+                    margin-bottom: 15px;
+                    padding: 0;
+                    gap: 5px;
+                    .product{
+                        list-style: none;
+                        width: 16%;
+                        height: auto;
+                        margin-bottom: 1rem;
+                        border: 1px solid gray;
+                        .productinfo{
+                            color: #333;
+                            text-decoration: none;
+                            .producttrademark{
+                                margin-top: 3px;
+                                margin-bottom: 0.5rem;
+                                padding-left: 5px;
+                            }
+                            .productname{
+                                width: 100%;
+                                height: auto;
+                                padding-left: 5px;
+                                p{
+                                    width: 100%;
+                                    height: 2.8rem;
+                                    overflow: hidden;
+                                    margin: 0;
+                                    margin-bottom: 5px;
+                                }
+                            }
+                            .skuunits{
+                                display: grid;
+                                grid-template-columns: 1fr 1fr;
+                                font-size: 0.6rem;
+                                margin-top: 0.5rem;
+                                opacity: 0.8;
+                                .productsku{
+                                    padding-left: 10%;
+                                }
+                                .productunits{
+                                    text-align: end;
+                                    span{
+                                        padding-right: 10%;
+                                    }
+                                }
+                            }
+                            .productimg{
+                                text-align: center;
+                                img{
+                                    width: 95%;
+                                    height: auto;
+                                }
+                            }
+                        }
+                        .valuecart{
+                            display: flex;
+                            justify-content: space-between;
+                            .value{
+                                padding-left: 5%;
+                                color: #333;
+                                text-decoration: none;
+                            }
+                            .cartplus{
+                                padding-right: 10%;
+                                color: #333;
+                                i{
+                                    font-size: 2rem;
+                                    height: 2.1rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .pagforcat{
+                display: flex;
+                justify-content: space-between;
+                .pagactual{
+                    display: flex;
+                    gap: 15px;
+                }
+                .pagcat{
+                    margin-right: 25px;
+                    button{
+                        border-radius: 100%;
+                        padding: 5px 12px;
+                        &:first-child{
+                            background-color: rgba(22, 196, 88, 0.4);
+                        }
+                        &:hover{
+                            padding: 8px 15px;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

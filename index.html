@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&family=Varela+Round&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./scss/main.css">
+    <link rel="shortcut icon" href="./images/Logoconfondocircular.png">
+    <!-- SEO -->
+    <title>GangaStore</title>
+    <meta name="description" content="Compra tus componentes, torres gamer y notebooks a los mejores precios del mercado.">
+    <meta name="keywords" content="gangastore, ganga store, notebook barato, notebooks baratos, pc gamer, pc gamer barato, fuentes de poder, placa madre, memoria ram, disipador por aire, disipador pc, water cooling, ventiladores pc, ssd, hdd, gpu, rtx, 3060ti, 3060 ti, 3060, gabinetes, gabinete, itx, atx, micro atx, m-atx">
+</head>
+<body>
+    <!-- Información escencial para clientes -->
+    <div id="information">
+        <p>¡Atención! Los viernes, nuestro horario de tienda y punto de retiro será hasta las 12:00 Hrs. hasta nuevo aviso.</p>
+    </div>
+
+    <!-- Sección del head -->
+    <header id="cabezal">
+        <!--  -->
+        <div class="containercabezal">
+            <div class="logohead">
+                <a href="./index.html"><img src="./images/Logoconfondocircular.png" alt="logo"></a>
+            </div>
+            <div class="presearch">
+                <div class="presentation">
+                    <h1>¡Bienvenidos a GangaStore, tus equipos preferidos a mejor precio!</h1>
+                </div>
+                <form action="" class="buscador">
+                    <input type="search" placeholder="Busca aquí...">
+                    <button type="submit" formaction="./pages/categoriesproducts.html">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </form>
+            </div>
+            <div class="sesioncarro">
+                <button class="seca">
+                    <a href="./pages/login.html"><i class="fa fa-user"></i><span>Sesión</span></i></a>
+                </button>
+                <span class="separadorseca">|</span>
+                <div class="container-fluid">
+                    <button class="seca btncarro" data-bs-toggle="modal" data-bs-target="#carritoModal"><i class="fa fa-shopping-cart"></i><span>Carrito</span></button>
+                    <div class="modal fade" id="carritoModal" tabindex="-1" aria-labelledby="carritoModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="carritoModalLabel">Tu Carrito de Compras</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center align-middle">Producto</th>
+                                                <th class="text-center align-middle">Precio</th>
+                                                <th class="text-center align-middle">Cantidad</th>
+                                                <th class="text-center align-middle">Total</th>
+                                                <th class="text-center align-middle">Eliminar</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center align-middle">Mouse gamer Logitech G305</td>
+                                                <td class="text-center align-middle">$39.990</td>
+                                                <td class="text-center align-middle">- 2 +</td>
+                                                <td class="text-center align-middle">$79.980</td>
+                                                <td class="text-center align-middle"><button type="button" class="btn"><i class="fas fa-trash"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center align-middle">Notebook TUF Gaming F15 FX506 Intel</td>
+                                                <td class="text-center align-middle">$649.990</td>
+                                                <td class="text-center align-middle">- 1 +</td>
+                                                <td class="text-center align-middle">$649.990</td>
+                                                <td class="text-center align-middle"><button type="button" class="btn"><i class="fas fa-trash"></i></button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="seca btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                    <button type="button" class="seca btn-primary" onclick="window.location.href='./pages/shoppingcart.html'">Pagar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+        <!-- Menu de selección-->
+        <nav id="menuopciones">
+            <!-- input no llevar form puesto que no es nada de formulario, solo lo estoy utilizando para la funcionalidad de checkeart el bar -->
+            <input type="checkbox" id="check" class="checkbtn">
+            <label for="check" class="checkbtn"><i class="fas fa-bars"></i></label>
+            <ul>
+                <!-- Llevan siempre a la misma pagina puesto que cuando ya tenga backend, de esa pagina se hara filtro por categoria como ZG, CONSOLAS, ETC -->
+                <li><a href="./pages/categoriesproducts.html">Zona Gaming</a><i class="fas fa-angle-down"></i></li>
+                <li><a href="./pages/categoriesproducts.html">Componentes</a><i class="fas fa-angle-down"></i></li>
+                <li><a href="./pages/categoriesproducts.html">Computación</a><i class="fas fa-angle-down"></i></li>
+                <li><a href="./pages/categoriesproducts.html">Consolas</a><i class="fas fa-angle-down"></i></li>
+                <li><a href="./pages/categoriesproducts.html">Redes y Server</a><i class="fas fa-angle-down"></i></li>
+                <li><a href="./pages/categoriesproducts.html">Mantenimiento Equipos</a><i class="fas fa-angle-down"></i></li>
+                <li><a href="./pages/categoriesproducts.html">Otras Categorías</a><i class="fas fa-angle-down"></i></li>
+            </ul>
+        </nav>
+        <!-- Imagen de cuotas con enlace a pagina de información de los bancos por convenio -->
+        <div class="cuotas">
+            <a href=""><img src="./images/cuotas.png" alt="imgcuotas1"></a>
+            <a href=""><img src="./images/cuotascortas.png" alt="imgcuotas2"></a>
+        </div>
+    </header>
+
+    <!-- Sección de slider-->
+    <section id="sliderpromo">
+        <ul>
+            <li><a href="./pages/categoriesproducts.html"><img src="./images/sliderpromo1.png" alt="imgpromo1"></a></li>
+            <li><a href="./pages/categoriesproducts.html"><img src="./images/sliderpromo2.png" alt="imgpromo2"></a></li>
+            <li><a href="./pages/categoriesproducts.html"><img src="./images/sliderpromo3.png" alt="imgpromo3"></a></li>
+            <li><a href="./pages/categoriesproducts.html"><img src="./images/sliderpromo4.png" alt="imgpromo4"></a></li>
+        </ul>
+    </section>
+    <!-- Sección de ofertas y lanzamientos-->
+    <div id="namepromocion">
+        <div class="namepromo">
+            <h2>Ofertas y Lanzamientos</h2>
+        </div>
+    </div>
+    <section id="promociones">
+        <div class="promocionone">
+            <div class="promo">
+                <a href="./pages/categoriesproducts.html">
+                    <img src="./images/promo1.png" alt="imgofertalanzamientoone">
+                </a>
+            </div>
+            <div class="promo">
+                <a href="./pages/categoriesproducts.html">
+                    <img src="./images/promo2.png" alt="imgofertalanzamientotwo">
+                </a>
+            </div>
+            <div class="promo">
+                <a href="./pages/categoriesproducts.html">
+                    <img src="./images/promo3.png" alt="imgofertalanzamientothree">
+                </a>
+            </div>
+            <div class="promo">
+                <a href="./pages/categoriesproducts.html">
+                    <img src="./images/promo4.png" alt="imgofertalanzamientofour">
+                </a>
+            </div>
+        </div>
+        <div class="promociontwo">
+            <a href="./pages/categoriesproducts.html">
+                <img src="./images/promo5.png" alt="imgofertalanzamientofive">
+            </a>
+        </div>
+        <div class="promocionthree">
+            <a href="./pages/categoriesproducts.html">
+                <img src="./images/promo6.png" alt="imgofertalanzamientosix">
+            </a>
+        </div>
+    </section>
+
+    <!-- Sección de ofertas de zona gamer -->
+    <section class="ofertasproduct">
+        <div class="namepromo">
+            <h2>Ofertas de Zona Gaming</h2>
+        </div>
+        <ul class="products">
+            <li class="product">
+                <a href="./pages/product.html" class="productinfo">
+                    <div class="producttrademark">
+                        <span><strong>Logitech </strong><i class="fas fa-registered"></i></span>
+                    </div>
+                    <div class="productname">
+                        <p>Mouse Gamer G305 Ligthspeed Wireless Negro</p>
+                    </div>
+                    <div class="skuunits">
+                        <div class="productsku">
+                            <span><strong>SKU:</strong> 5L3M1G8W</span>
+                        </div>
+                        <div class="productunits">
+                            <span>+100 Stock</span>
+                        </div>
+                    </div>
+                    <div class="productimg">
+                        <img src="./images/L-G305-LS.jpg" alt="imgoneozg">
+                    </div>
+                </a>
+                <div class="valuecart">
+                    <a href="./pages/product.html" class="value">
+                        <div class="productvalue">
+                            <span><strong>$ 39.990</strong></span>
+                        </div>
+                        <div class="productprevalue">
+                            <span><s>$ 40.990</s></span>
+                        </div>
+                    </a>
+                    <a href="./pages/product.html" class="cartplus">
+                        <i class="fa fa-cart-plus"></i>
+                    </a>
+                </div>
+            </li>
+            <li class="product">
+                <a href="./pages/product.html" class="productinfo">
+                    <div class="producttrademark">
+                        <span><strong>Logitech </strong><i class="fas fa-registered"></i></span>
+                    </div>
+                    <div class="productname">
+                        <p>Mouse Gamer G502 X PLUS Wireless Blanco</p>
+                    </div>
+                    <div class="skuunits">
+                        <div class="productsku">
+                            <span><strong>SKU:</strong> 5L5MXPWB</span>
+                        </div>
+                        <div class="productunits">
+                            <span>14 Stock</span>
+                        </div>
+                    </div>
+                    <div class="productimg">
+                        <img src="./images/L-G502-XP.jpg" alt="imgtwoozg">
+                    </div>
+                </a>
+                <div class="valuecart">
+                    <a href="./pages/product.html" class="value">
+                        <div class="productvalue">
+                            <span><strong>$ 129.990</strong></span>
+                        </div>
+                        <div class="productprevalue">
+                            <span><s>$ 179.990</s></span>
+                        </div>
+                    </a>
+                    <a href="./pages/product.html" class="cartplus">
+                        <i class="fa fa-cart-plus"></i>
+                    </a>
+                </div>
+            </li>
+            <li class="product">
+                <a href="./pages/product.html" class="productinfo">
+                    <div class="producttrademark">
+                        <span><strong>Victus </strong><i class="fas fa-registered"></i></span>
+                    </div>
+                    <div class="productname">
+                        <p>Notebook Gamer Victus Intel i5-11400H NVIDIA RTX 3050 4GB 16.1" FHD 60Hz 8GB RAM 256GB SSD Windows 11 16-d0500la Performance Blue</p>
+                    </div>
+                    <div class="skuunits">
+                        <div class="productsku">
+                            <span><strong>SKU:</strong> 8NV5R3W1</span>
+                        </div>
+                        <div class="productunits">
+                            <span>20 Stock</span>
+                        </div>
+                    </div>
+                    <div class="productimg">
+                        <img src="./images/V-16I5R3-NG.jpg" alt="imgthreeozg">
+                    </div>
+                </a>
+                <div class="valuecart">
+                    <a href="./pages/product.html" class="value">
+                        <div class="productvalue">
+                            <span><strong>$ 1.079.990</strong></span>
+                        </div>
+                        <div class="productprevalue">
+                            <span><s>$ 1.349.990</s></span>
+                        </div>
+                    </a>
+                    <a href="./pages/product.html" class="cartplus">
+                        <i class="fa fa-cart-plus"></i>
+                    </a>
+                </div>
+            </li>
+            <li class="product">
+                <a href="./pages/product.html" class="productinfo">
+                    <div class="producttrademark">
+                        <span><strong>Gear </strong><i class="fas fa-registered"></i></span>
+                    </div>
+                    <div class="productname">
+                        <p>Desktop Gamer Red Demon AMD Ryzen 5 5600X 8GB 240GB SSD NVIDIA PH-GTX 1650 4GB</p>
+                    </div>
+                    <div class="skuunits">
+                        <div class="productsku">
+                            <span><strong>SKU:</strong> TO10GR5G</span>
+                        </div>
+                        <div class="productunits">
+                            <span>2 Stock</span>
+                        </div>
+                    </div>
+                    <div class="productimg">
+                        <img src="./images/T-GGEAR-RG.jpg" alt="imgfourozg">
+                    </div>
+                </a>
+                <div class="valuecart">
+                    <a href="./pages/product.html" class="value">
+                        <div class="productvalue">
+                            <span><strong>$ 499.990</strong></span>
+                        </div>
+                        <div class="productprevalue">
+                            <span><s>$ 750.990</s></span>
+                        </div>
+                    </a>
+                    <a href="./pages/product.html" class="cartplus">
+                        <i class="fa fa-cart-plus"></i>
+                    </a>
+                </div>
+            </li>
+            <li class="product">
+                <a href="./pages/product.html" class="productinfo">
+                    <div class="producttrademark">
+                        <span><strong>Logitech </strong><i class="fas fa-registered"></i></span>
+                    </div>
+                    <div class="productname">
+                        <p>Mouse Gamer G604 Lightspeed Wireless-Bluetooth Negro</p>
+                    </div>
+                    <div class="skuunits">
+                        <div class="productsku">
+                            <span><strong>SKU:</strong> 5L6M2G40</span>
+                        </div>
+                        <div class="productunits">
+                            <span>28 Stock</span>
+                        </div>
+                    </div>
+                    <div class="productimg">
+                        <img src="./images/L-G604-LS.jpg" alt="imgfiveozg">
+                    </div>
+                </a>
+                <div class="valuecart">
+                    <a href="./pages/product.html" class="value">
+                        <div class="productvalue">
+                            <span><strong>$ 63.990</strong></span>
+                        </div>
+                        <div class="productprevalue">
+                            <span><s>$ 79.990</s></span>
+                        </div>
+                    </a>
+                    <a href="./pages/product.html" class="cartplus">
+                        <i class="fa fa-cart-plus"></i>
+                    </a>
+                </div>
+            </li>
+            <li class="product">
+                <a href="./pages/product.html" class="productinfo">
+                    <div class="producttrademark">
+                        <span><strong>HyperX </strong><i class="fas fa-registered"></i></span>
+                    </div>
+                    <div class="productname">
+                        <p>Teclado Gamer HyperX Alloy Elite2 Mecánico Español</p>
+                    </div>
+                    <div class="skuunits">
+                        <div class="productsku">
+                            <span><strong>SKU:</strong> 1THAL2ME</span>
+                        </div>
+                        <div class="productunits">
+                            <span>3 Stock</span>
+                        </div>
+                    </div>
+                    <div class="productimg">
+                        <img src="./images/H-ELITE2-ME.jpg" alt="imgsixozg">
+                    </div>
+                </a>
+                <div class="valuecart">
+                    <a href="./pages/product.html" class="value">
+                        <div class="productvalue">
+                            <span><strong>$ 119.990</strong></span>
+                        </div>
+                        <div class="productprevalue">
+                            <span><s>$ 139.990</s></span>
+                        </div>
+                    </a>
+                    <a href="./pages/product.html" class="cartplus">
+                        <i class="fa fa-cart-plus"></i>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Sección de ofertas computación -->
+    <section class="ofertasproduct">
+        <div class="namepromo">
+            <h2>Ofertas de Computación</h2>
+        </div>
+        <ul class="products">
+            <li class="product">
+                <a href="./pages/product.html" class="productinfo">
+                    <div class="producttrademark">
+                        <span><strong>Dell </strong><i class="fas fa-registered"></i></span>
+                    </div>
+                    <div class="productname">
+                        <p>Notebook Inspiron 3520 Intel i5-1135G7 15.6" FHD 8GB 256GB SSD Windows 11</p>
+                    </div>
+                    <div class="skuunits">
+                        <div class="productsku">
+                            <span><strong>SKU:</strong> 8NDII5W1</span>
+                        </div>
+                        <div class="productunits">
+                            <span>+100 Stock</span>
+                        </div>
+                    </div>
+                    <div class="productimg">
+                        <img src="./images/N-DINS-I5.jpg" alt="imgooneopc">
+                    </div>
+                </a>
+                <div class="valuecart">
+                    <a href="./pages/product.html" class="value">
+                        <div class="productvalue">
+                            <span><strong>$ 349.990</strong></span>
+                        </div>
+                        <div class="productprevalue">
+                            <span><s>$ 549.990</s></span>
+                        </div>
+                    </a>
+                    <a href="./pages/product.html" class="cartplus">
+                        <i class="fa fa-cart-plus"></i>
+                    </a>
+                </div>
+            </li>
+            <li class="product">
+                <a href="./pages/product.html" class="productinfo">
+                    <div class="producttrademark">
+                        <span><strong>Asus </strong><i class="fas fa-registered"></i></span>
+                    </div>
+                    <div class="productname">
+                        <p>Notebook TUF Gaming F15 FX506 Intel Core i5-11400H NVIDIA RTX 2050 4GB 15.6" FHD 144Hz 8GB 512GB SSD Windows 11 Graphite Black</p>
+                    </div>
+                    <div class="skuunits">
+                        <div class="productsku">
+                            <span><strong>SKU:</strong> 7H1G54TG</span>
+                        </div>
+                        <div class="productunits">
+                            <span>78 Stock</span>
+                        </div>
+                    </div>
+                    <div class="productimg">
+                        <img src="./images/N-AF15-TG.jpg" alt="imgtwoopc">
+                    </div>
+                </a>
+                <div class="valuecart">
+                    <a href="./pages/product.html" class="value">
+                        <div class="productvalue">
+                            <span><strong>$ 649.990</strong></span>
+                        </div>
+                        <div class="productprevalue">
+                            <span><s>$ 779.990</s></span>
+                        </div>
+                    </a>
+                    <a href="./pages/product.html" class="cartplus">
+                        <i class="fa fa-cart-plus"></i>
+                    </a>
+                </div>
+            </li>
+            <li class="product">
+                <a href="./pages/product.html" class="productinfo">
+                    <div class="producttrademark">
+                        <span><strong>Apple </strong><i class="fas fa-registered"></i></span>
+                    </div>
+                    <div class="productname">
+                        <p>MacBook Air 13" (Chip M1 CPU 8 núcleos GPU 7 núcleos, 8GB RAM, 256GB SSD) - Gris espacial</p>
+                    </div>
+                    <div class="skuunits">
+                        <div class="productsku">
+                            <span><strong>SKU:</strong> AM15713A</span>
+                        </div>
+                        <div class="productunits">
+                            <span>6 Stock</span>
+                        </div>
+                    </div>
+                    <div class="productimg">
+                        <img src="./images/N-APA13-M1.jpg" alt="imgthreeopc">
+                    </div>
+                </a>
+                <div class="valuecart">
+                    <a href="./pages/product.html" class="value">
+                        <div class="productvalue">
+                            <span><strong>$ 849.990</strong></span>
+                        </div>
+                        <div class="productprevalue">
+                            <span><s>$ 1.099.990</s></span>
+                        </div>
+                    </a>
+                    <a href="./pages/product.html" class="cartplus">
+                        <i class="fa fa-cart-plus"></i>
+                    </a>
+                </div>
+            </li>
+            <li class="product">
+                <a href="./pages/product.html" class="productinfo">
+                    <div class="producttrademark">
+                        <span><strong>Samsung </strong><i class="fas fa-registered"></i></span>
+                    </div>
+                    <div class="productname">
+                        <p>Notebook Galaxy Book3 360 13.3"FHD AMOLED Intel Core i7-1355U 8GB 512GB SSD Windows 11 Silver</p>
+                    </div>
+                    <div class="skuunits">
+                        <div class="productsku">
+                            <span><strong>SKU:</strong> 5FJHW421/span>
+                        </div>
+                        <div class="productunits">
+                            <span>31 Stock</span>
+                        </div>
+                    </div>
+                    <div class="productimg">
+                        <img src="./images/N-SBK3-21.jpg" alt="imgfouropc">
+                    </div>
+                </a>
+                <div class="valuecart">
+                    <a href="./pages/product.html" class="value">
+                        <div class="productvalue">
+                            <span><strong>$ 990.990</strong></span>
+                        </div>
+                        <div class="productprevalue">
+                            <span><s>$ 1.229.990</s></span>
+                        </div>
+                    </a>
+                    <a href="./pages/product.html" class="cartplus">
+                        <i class="fa fa-cart-plus"></i>
+                    </a>
+                </div>
+            </li>
+            <li class="product">
+                <a href="./pages/product.html" class="productinfo">
+                    <div class="producttrademark">
+                        <span><strong>HP </strong><i class="fas fa-registered"></i></span>
+                    </div>
+                    <div class="productname">
+                        <p>Notebook 2 en 1 HP Pavilion x360 14" FHD Intel Core i5-1235U 8GB 512GB SSD Windows 11 Natural Silver 14-dy2003la</p>
+                    </div>
+                    <div class="skuunits">
+                        <div class="productsku">
+                            <span><strong>SKU:</strong> 568UFN2Q</span>
+                        </div>
+                        <div class="productunits">
+                            <span>8 Stock</span>
+                        </div>
+                    </div>
+                    <div class="productimg">
+                        <img src="./images/N-HP21-PX.jpg" alt="imgfiveopc">
+                    </div>
+                </a>
+                <div class="valuecart">
+                    <a href="./pages/product.html" class="value">
+                        <div class="productvalue">
+                            <span><strong>$ 829.990</strong></span>
+                        </div>
+                        <div class="productprevalue">
+                            <span><s>$ 889.990</s></span>
+                        </div>
+                    </a>
+                    <a href="./pages/product.html" class="cartplus">
+                        <i class="fa fa-cart-plus"></i>
+                    </a>
+                </div>
+            </li>
+            <li class="product">
+                <a href="./pages/product.html" class="productinfo">
+                    <div class="producttrademark">
+                        <span><strong>Asus </strong><i class="fas fa-registered"></i></span>
+                    </div>
+                    <div class="productname">
+                        <p>Notebook Zenbook 14X OLED UX3404 14.5" 2K Intel Core i9-13900H 16GB 1TB SSD Windows 11 Inkwell Gray UX3404VA-M9115W</p>
+                    </div>
+                    <div class="skuunits">
+                        <div class="productsku">
+                            <span><strong>SKU:</strong> 5L3M1G8W</span>
+                        </div>
+                        <div class="productunits">
+                            <span>+100 Stock</span>
+                        </div>
+                    </div>
+                    <div class="productimg">
+                        <img src="./images/N-AZ14X-UX.jpg" alt="imgsixopc">
+                    </div>
+                </a>
+                <div class="valuecart">
+                    <a href="./pages/product.html" class="value">
+                        <div class="productvalue">
+                            <span><strong>$ 1.169.990</strong></span>
+                        </div>
+                        <div class="productprevalue">
+                            <span><s>$ 1.499.990</s></span>
+                        </div>
+                    </a>
+                    <a href="./pages/product.html" class="cartplus">
+                        <i class="fa fa-cart-plus"></i>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Sección de ofertas componentes -->
+    <section class="ofertasproduct">
+        <div class="namepromo">
+            <h2>Ofertas de Componentes</h2>
+        </div>
+        <ul class="products">
+            <li class="product">
+                <a href="./pages/product.html" class="productinfo">
+                    <div class="producttrademark">
+                        <span><strong>AMD </strong><i class="fas fa-registered"></i></span>
+                    </div>
+                    <div class="productname">
+                        <p>CPU Ryzen 5 5600G (AM4)</p>
+                    </div>
+                    <div class="skuunits">
+                        <div class="productsku">
+                            <span><strong>SKU:</strong> AMD5A46G</span>
+                        </div>
+                        <div class="productunits">
+                            <span>30 Stock</span>
+                        </div>
+                    </div>
+                    <div class="productimg">
+                        <img src="./images/CPU-R5-4.jpg" alt="imgoneocomp">
+                    </div>
+                </a>
+                <div class="valuecart">
+                    <a href="./pages/product.html" class="value">
+                        <div class="productvalue">
+                            <span><strong>$ 149.990</strong></span>
+                        </div>
+                        <div class="productprevalue">
+                            <span><s>$ 154.590</s></span>
+                        </div>
+                    </a>
+                    <a href="./pages/product.html" class="cartplus">
+                        <i class="fa fa-cart-plus"></i>
+                    </a>
+                </div>
+            </li>
+            <li class="product">
+                <a href="./pages/product.html" class="productinfo">
+                    <div class="producttrademark">
+                        <span><strong>Gamdias </strong><i class="fas fa-registered"></i></span>
+                    </div>
+                    <div class="productname">
+                        <p>Gabinete ATX Aura GC1 / 4 Ventiladores ARGB</p>
+                    </div>
+                    <div class="skuunits">
+                        <div class="productsku">
+                            <span><strong>SKU:</strong> GAB7157A</span>
+                        </div>
+                        <div class="productunits">
+                            <span>17 Stock</span>
+                        </div>
+                    </div>
+                    <div class="productimg">
+                        <img src="./images/GAB-GAMAURA-GC1.jpg" alt="imgtwoocomp">
+                    </div>
+                </a>
+                <div class="valuecart">
+                    <a href="./pages/product.html" class="value">
+                        <div class="productvalue">
+                            <span><strong>$ 52.990</strong></span>
+                        </div>
+                        <div class="productprevalue">
+                            <span><s>$ 55.790</s></span>
+                        </div>
+                    </a>
+                    <a href="./pages/product.html" class="cartplus">
+                        <i class="fa fa-cart-plus"></i>
+                    </a>
+                </div>
+            </li>
+            <li class="product">
+                <a href="./pages/product.html" class="productinfo">
+                    <div class="producttrademark">
+                        <span><strong>Asus </strong><i class="fas fa-registered"></i></span>
+                    </div>
+                    <div class="productname">
+                        <p>Video AMD Radeon RX560 4G ROG STRIX V2</p>
+                    </div>
+                    <div class="skuunits">
+                        <div class="productsku">
+                            <span><strong>SKU:</strong> G75UARX4</span>
+                        </div>
+                        <div class="productunits">
+                            <span>+100 Stock</span>
+                        </div>
+                    </div>
+                    <div class="productimg">
+                        <img src="./images/GPU-ARX5-4.jpg" alt="imgthreeocomp">
+                    </div>
+                </a>
+                <div class="valuecart">
+                    <a href="./pages/product.html" class="value">
+                        <div class="productvalue">
+                            <span><strong>$ 92.990</strong></span>
+                        </div>
+                        <div class="productprevalue">
+                            <span><s>$ 97.890</s></span>
+                        </div>
+                    </a>
+                    <a href="./pages/product.html" class="cartplus">
+                        <i class="fa fa-cart-plus"></i>
+                    </a>
+                </div>
+            </li>
+            <li class="product">
+                <a href="./pages/product.html" class="productinfo">
+                    <div class="producttrademark">
+                        <span><strong>Corsair </strong><i class="fas fa-registered"></i></span>
+                    </div>
+                    <div class="productname">
+                        <p>Video AMD Radeon RX560 4G ROG STRIX V2</p>
+                    </div>
+                    <div class="skuunits">
+                        <div class="productsku">
+                            <span><strong>SKU:</strong> FP780PGM</span>
+                        </div>
+                        <div class="productunits">
+                            <span>+100 Stock</span>
+                        </div>
+                    </div>
+                    <div class="productimg">
+                        <img src="./images/FP-COR50-PG.jpg" alt="imgfourocomp">
+                    </div>
+                </a>
+                <div class="valuecart">
+                    <a href="./pages/product.html" class="value">
+                        <div class="productvalue">
+                            <span><strong>$ 109.990</strong></span>
+                        </div>
+                        <div class="productprevalue">
+                            <span><s>$ 115.790</s></span>
+                        </div>
+                    </a>
+                    <a href="./pages/product.html" class="cartplus">
+                        <i class="fa fa-cart-plus"></i>
+                    </a>
+                </div>
+            </li>
+            <li class="product">
+                <a href="./pages/product.html" class="productinfo">
+                    <div class="producttrademark">
+                        <span><strong>Gigabyte </strong><i class="fas fa-registered"></i></span>
+                    </div>
+                    <div class="productname">
+                        <p>M/B AMD B550M DS3H (AM4)</p>
+                    </div>
+                    <div class="skuunits">
+                        <div class="productsku">
+                            <span><strong>SKU:</strong> PMJG748A</span>
+                        </div>
+                        <div class="productunits">
+                            <span>50 Stock</span>
+                        </div>
+                    </div>
+                    <div class="productimg">
+                        <img src="./images/PM-GB5_DH.jpg" alt="imgfiveocomp">
+                    </div>
+                </a>
+                <div class="valuecart">
+                    <a href="./pages/product.html" class="value">
+                        <div class="productvalue">
+                            <span><strong>$ 135.990</strong></span>
+                        </div>
+                        <div class="productprevalue">
+                            <span><s>$ 143.190</s></span>
+                        </div>
+                    </a>
+                    <a href="./pages/product.html" class="cartplus">
+                        <i class="fa fa-cart-plus"></i>
+                    </a>
+                </div>
+            </li>
+            <li class="product">
+                <a href="./pages/product.html" class="productinfo">
+                    <div class="producttrademark">
+                        <span><strong>Crucial </strong><i class="fas fa-registered"></i></span>
+                    </div>
+                    <div class="productname">
+                        <p>DDR4 8GB 2666MHz Value</p>
+                    </div>
+                    <div class="skuunits">
+                        <div class="productsku">
+                            <span><strong>SKU:</strong>JHGYU951</span>
+                        </div>
+                        <div class="productunits">
+                            <span>+100 Stock</span>
+                        </div>
+                    </div>
+                    <div class="productimg">
+                        <img src="./images/MR-CLD4-26MH.jpg" alt="imgsixocomp">
+                    </div>
+                </a>
+                <div class="valuecart">
+                    <a href="./pages/product.html" class="value">
+                        <div class="productvalue">
+                            <span><strong>$ 18.990</strong></span>
+                        </div>
+                        <div class="productprevalue">
+                            <span><s>$ 22.990</s></span>
+                        </div>
+                    </a>
+                    <a href="./pages/product.html" class="cartplus">
+                        <i class="fa fa-cart-plus"></i>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+   <!-- Seccion footer -->
+    <footer id="piepagina">
+        <section class="pie socialcontacto">
+            <div class="logofooter">
+                <img src="./images/logosinfondo.png" alt="imglogofooter">
+            </div>
+            <div class="socialesmetodo">
+                <i class="fas fa-envelope"></i>
+                <span>info@gangastore.cl</span>
+            </div>
+            <div class="socialesmetodo">
+                <i class="fas fa-phone"></i>
+                <span>+56912345678</span>
+            </div>
+            <div class="socialesmetodo">
+                <i class="fab fa-twitter"></i>
+                <span>@gangastore</span>
+            </div>
+        </section>
+        <section class="pie ubicacion">
+            <div class="ubi">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>UBICACION DE LA TIENDA</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3332.0411467315184!2d-70.70149608766012!3d-33.36999179328714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c6ded5489ddf%3A0x5288be5e9e58f6fc!2sAv.%20Pdte.%20Eduardo%20Frei%20Montalva%207050%2C%20Quilicura%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1698366177006!5m2!1ses!2scl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+        <section class="pie serviciocliente">
+            <h3>SERVICIO AL CLIENTE</h3>
+            <a href="">Términos y Condiciones</a>
+            <a href="">Bases y Promociones</a>
+            <a href="./pages/contact.html">Contacto</a>
+        </section>
+        <section class="pie nosotros">
+            <h3>NOSOTROS</h3>
+            <a href="">Nuestra Empresa</a>
+        </section>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/a2dd6045c4.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,198 @@
+/* Information de todas las paginas */
+/* Estilo para la información */
+#information{
+    width: 100%;
+    height: auto;
+    @include flexaligncontent(center);
+    background-color: #470696;
+    p{
+        color: white;
+        font-size: clamp(0.9rem, 1vw, 2rem);
+        margin: 5px;
+    }
+}
+/* Header de todas las paginas */
+/* Estilo para el head(incluye logo, bienvenida, buscador, sesion y carrito, menu y cuotas) */
+#cabezal{
+    .containercabezal{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 10px 0px;
+        border-bottom: 1px solid #dedede;
+        background-color: rgba(22, 196, 88, 0.4);
+        .logohead{
+            display: flex;
+            justify-content: center;
+            width: 30%;
+            height: 100%;
+            a{
+                img{
+                    width: 100px;
+                    height: 100px;
+                    padding-right: 20%;
+                }
+            }
+        }
+        .presearch{
+            display: block;
+            width: 40%;
+            .presentation{
+                h1{
+                    text-align: start;
+                    /* font-size: 1.4rem; */
+                    font-size: clamp(0.6rem, 1vw, 1.5rem);
+                    word-wrap: break-word;
+                }
+            }
+            .buscador{
+                display: flex;
+                justify-content: flex-start;
+                margin-top: 10px;
+                input{
+                    width: 70%;
+                    height: 35px;
+                    border-radius: 5px;
+                    padding: 8px;
+                }
+                button{
+                    width: 11%;
+                    border-radius: 5px;
+                    background-color: #47069698;
+                    color: #fff;
+                    i:hover{
+                        color: black;
+                    }
+                }
+            }
+        }
+        .sesioncarro {
+            width: 30%;
+            @include flexaligncontent(center);
+            gap: 10px;
+            .seca{
+                overflow: hidden;
+                width: 45%;
+                height: 2rem;
+                border-radius: 10px;
+                background-color: #47069698;
+                border: none;
+                &:hover{
+                    @include buttonsesioncarro;
+                }
+                a{
+                    text-decoration: none;
+                    color: black;
+                    &:hover{
+                        text-decoration: none;
+                        color: white;
+                        font-size: 100%;
+                        transition: 0.1s;
+                    }
+                    span{
+                        padding-left: 5px;
+                        padding-right: 5px;
+                    }
+                }
+            }
+            .separadorseca{
+                font-size: 1.4rem;
+            }
+            .container-fluid{
+                .btncarro{
+                    width: 45%;
+                    &:hover{
+                        @include buttonsesioncarro;
+                        text-decoration: none;
+                        color: white;
+                        font-size: 100%;
+                        transition: 0.1s;
+                    }
+                    span{
+                        font-size: 100%;
+                        padding-left: 5px;
+                        padding-right: 5px;
+                    }
+                }
+                .modal{
+                    .modal-dialog{
+                        .modal-content{
+                            .modal-body{
+                                .table{
+                                    tbody{
+                                        tr{
+                                            td:last-child{
+                                                button{
+                                                    i{
+                                                        color: red;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .modal-footer{
+                                @include flexaligncontent(center);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #menuopciones{
+        background-color: rgba(0, 0, 0, 0.11);
+        .checkbtn{
+            cursor: pointer;
+            display: none;
+        }
+        ul{
+            display: inline-flex;
+            justify-content: center;
+            margin-bottom: 10px;
+            list-style: none;
+            width: 100%;
+            padding: 0;
+            li{
+                width: 12.5%;
+                padding-top: 1%;
+                text-align: center;
+                &:hover{
+                    border-bottom: 3px solid #470696;
+                    font-size: large;
+                    @include color-font;
+                }
+                a{
+                    font-size: 75%;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    color: #4a3866;
+                    transition: all 0.3s;
+                    &:hover{
+                        @include color-font;
+                    }
+                }
+                i{
+                    padding-left: 5px;
+                    padding-right: 5px;
+                }
+            }
+        }
+    }
+    .cuotas{
+        @include flexaligncontent(center);
+        background-color: rgba(0, 0, 0, 0.8);
+        a{
+            display: block;
+            img{
+                width: 100%;
+                height: 3rem;
+            }
+        }
+        a:nth-child(2){
+            display: none;
+        }
+    }
+}

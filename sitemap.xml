@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://aaraya98.github.io/gangastore/</loc>
+  <lastmod>2023-12-08T20:44:23+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://aaraya98.github.io/gangastore/index.html</loc>
+  <lastmod>2023-12-08T20:44:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://aaraya98.github.io/gangastore/pages/login.html</loc>
+  <lastmod>2023-12-08T20:44:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://aaraya98.github.io/gangastore/pages/categoriesproducts.html</loc>
+  <lastmod>2023-12-08T20:44:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://aaraya98.github.io/gangastore/pages/product.html</loc>
+  <lastmod>2023-12-08T20:44:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://aaraya98.github.io/gangastore/pages/shoppingcart.html</loc>
+  <lastmod>2023-12-08T20:44:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://aaraya98.github.io/gangastore/pages/contact.html</loc>
+  <lastmod>2023-12-08T20:44:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://aaraya98.github.io/gangastore/pages/recoveraccount.html</loc>
+  <lastmod>2023-12-08T20:44:23+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://aaraya98.github.io/gangastore/pages/registeruser.html</loc>
+  <lastmod>2023-12-08T20:44:23+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://aaraya98.github.io/gangastore/pages/changepassword.html</loc>
+  <lastmod>2023-12-08T20:44:23+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+
+</urlset>

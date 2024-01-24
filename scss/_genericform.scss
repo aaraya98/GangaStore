@@ -1,0 +1,71 @@
+/*  */
+/* CSS generico de Login - recoveraccount - changepassword - contact - registeruser */
+#formcontainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.08);
+    #sectionform{
+        background-color: #ffffff;
+        padding: 20px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+        text-align: center;
+        width: 45%;
+        height: auto;
+        .nameform{
+            margin-top: 20px;
+            margin-bottom: 50px;
+            h2{
+                color: #333;
+                text-align: center;
+                font-weight: bold;
+            }
+        }
+        .formulario{
+            margin-top: 35px;
+            div{
+                margin-bottom: 30px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                input{
+                    width: 85%;
+                    margin-top: 15px;
+                    padding: 8px;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    box-sizing: border-box;
+                }
+                button{
+                    background-color: #470696;
+                    color: #fff;
+                    padding: 10px 15px;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    width: 40%;
+                }
+            }
+        }
+        .ayuda{
+            div{
+                margin-top: 10px;
+                display: flex;
+                justify-content: center;
+                span{
+                    display: block;
+                    margin-bottom: 5px;
+                }
+                a{
+                    color: #007bff;
+                    padding-left: 5px;
+                }
+            }
+        }
+    }
+}

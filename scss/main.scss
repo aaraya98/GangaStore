@@ -1,0 +1,72 @@
+/* Estilo para toda la pagina */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Varela Round', sans-serif;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+:root{
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+}
+/* mixin para posicionamiento de grids */
+@mixin positiongrid($colstart, $colend, $rowstart, $rowend) {
+    grid-column-start: $colstart;
+    grid-column-end: $colend;
+    grid-row-start: $rowstart;
+    grid-row-end: $rowend;
+}
+/* mixin para form del contacto */
+@mixin tamborbox() {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+/* mixin para para flex con align content center y justify content variable*/
+@mixin flexaligncontent($justifycontent) {
+    display: flex;
+    align-content: center;
+    justify-content: $justifycontent;
+}
+/* mixin para hover al pasar por el nav*/
+@mixin color-font() {
+    color: #470696;
+    font-style: italic;
+    transition: all 0.1s;
+}
+/* mixin para botones de sesion carrito */
+@mixin buttonsesioncarro() {
+    width: 50%;
+    height: 2.5rem;
+    transition: 0.3s;
+}
+/* mixin para botones de sesion carrito */
+@mixin buttonseca() {
+    width: 85%;
+    height: 2.5rem;
+    transition: 0.3s;
+}
+/* mexin para display de columnas centradas de registeruser*/
+@mixin column-center() {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+//Ejecucion por orden de prioridad
+@import 'header';
+@import 'footer';
+@import 'pagprincipal';
+@import 'categoriesproducts';
+@import 'product';
+@import 'shoppingcart';
+@import 'genericform';
+@import 'recoveryaccount';
+@import 'resgisteruser';
+@import 'contact';
+@import 'mediaquery';
