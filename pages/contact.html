@@ -121,7 +121,7 @@
             <div class="nameform">
                 <h2>Formulario de contacto</h2>
             </div>
-            <form action="#" class="formcontact">
+            <form action="" class="formcontact" id="contactUserForm">
                 <div class="formdata">
                     <label for="nombre">Nombre:</label>
                     <input type="text" id="nombre" name="nombre" required>
@@ -131,16 +131,17 @@
                     <input type="text" id="apellido" name="apellido" required>
                 </div>
                 <div class="formdata">
-                    <label for="rut">RUT:</label>
-                    <input type="text" id="rut" name="rut" required>
+                    <label for="rut">RUT/DNI:</label>
+                    <input type="text" id="rut" name="rut" placeholder="12345678-k" required>
                 </div>
                 <div class="formdata">
                     <label for="telefono">Teléfono:</label>
-                    <input type="tel" id="telefono" name="telefono" required>
+                    <input type="text" id="telefono" name="telefono" placeholder="56912345678" required>
+                    <p id="mensajePhone"></p>
                 </div>
                 <div class="formdata">
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email" placeholder="ejemplo@email.cl" required>
                 </div>
                 <div class="formdata">
                     <label for="numeroOrden">Número de Orden:</label>
@@ -150,20 +151,14 @@
                     <label for="motivo">Motivo:</label>
                     <select id="motivo" name="motivo" required>
                         <option value="consultas" disabled selected>Seleccionar...</option>
-                        <option value="consultas">Consultas</option>
-                        <option value="reclamos">Reclamos</option>
-                        <option value="solicitudes">Solicitudes</option>
-                        <option value="atrasoEnvio">Atraso de Envío</option>
-                        <option value="productoConFalla">Producto con Falla</option>
-                        <option value="otro">Otro Motivo</option>
                     </select>
                 </div>
                 <div class="textareaform">
                     <label for="comentarios">Comentarios:</label>
-                    <textarea id="comentarios" name="comentarios" rows="4" ></textarea>
+                    <textarea id="comentarios" name="comentarios" rows="4" required></textarea>
                 </div>
                 <div class="senddata">
-                    <button type="submit" formaction="../index.html">Enviar</button>
+                    <button type="submit">Enviar</button>
                 </div>
             </form>
         </section>
@@ -207,6 +202,8 @@
         </section>
     </footer>
 
+
+    <script src="../scripts/contact.js"></script>
     <script src="https://kit.fontawesome.com/a2dd6045c4.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>

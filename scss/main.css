@@ -1096,6 +1096,10 @@
   cursor: pointer;
   width: 40%;
 }
+#formcontainer #sectionform .formulario #mensajeLogin {
+  color: red;
+  font-size: 1.5rem;
+}
 #formcontainer #sectionform .ayuda div {
   margin-top: 10px;
   display: flex;
@@ -1207,6 +1211,10 @@
   box-sizing: border-box;
   margin-bottom: 20px;
 }
+#formcontainer #sectionformreguser .formreguser .reguserdataone div p {
+  color: red;
+  font: 1rem sans-serif;
+}
 #formcontainer #sectionformreguser .formreguser .reguserdatatwo {
   grid-column-start: 2;
   grid-column-end: 3;
@@ -1234,6 +1242,15 @@
   height: 2rem;
 }
 #formcontainer #sectionformreguser .formreguser .reguserdatatwo div input {
+  width: 85%;
+  margin-top: 5px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+#formcontainer #sectionformreguser .formreguser .reguserdatatwo div select {
   width: 85%;
   margin-top: 5px;
   padding: 8px;
@@ -1276,6 +1293,10 @@
   border-radius: 4px;
   box-sizing: border-box;
   margin-bottom: 20px;
+}
+#formcontainer #sectionformreguser .formreguser .reguserdatathree div p {
+  color: red;
+  font: 1rem sans-serif;
 }
 #formcontainer #sectionformreguser .formreguser .reguserdatafour {
   grid-column-start: 1;
@@ -1337,6 +1358,10 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+}
+#formcontainer #sectionform .formcontact .formdata p {
+  color: red;
+  font: 1rem sans-serif;
 }
 #formcontainer #sectionform .formcontact .textareaform {
   grid-column-start: 1;

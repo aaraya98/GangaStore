@@ -50,7 +50,7 @@ function logging(){
 
     //Recorre el array para buscar coincidencias
     for (let i = 0; i < USERPASSARRAY.length; i++) {
-        if (getUser === USERPASSARRAY[i].user && getPassword === USERPASSARRAY[i].pasword) {
+        if(USERPASSARRAY.some(usuario => usuario.user === getUser && usuario.pasword === getPassword)){
             // Coincidencia encontrada
             login = true;
             counter = 4;

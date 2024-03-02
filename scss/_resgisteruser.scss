@@ -53,6 +53,10 @@
                         box-sizing: border-box;
                         margin-bottom: 20px;
                     }
+                    p{
+                        color: red;
+                        font: 1rem sans-serif;
+                    }
                 }
             }
             .reguserdatatwo{
@@ -73,6 +77,15 @@
                         height: 2rem;
                     }
                     input{
+                        width: 85%;
+                        margin-top: 5px;
+                        padding: 8px;
+                        border: 1px solid #ccc;
+                        border-radius: 4px;
+                        box-sizing: border-box;
+                        margin-bottom: 20px;
+                    }
+                    select{
                         width: 85%;
                         margin-top: 5px;
                         padding: 8px;
@@ -108,6 +121,10 @@
                         border-radius: 4px;
                         box-sizing: border-box;
                         margin-bottom: 20px;
+                    }
+                    p{
+                        color: red;
+                        font: 1rem sans-serif;
                     }
                 }
             }

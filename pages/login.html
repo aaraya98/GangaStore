@@ -120,18 +120,19 @@
             <div class="nameform">
                 <h2>INICIAR SESIÓN CON SU CUENTA</h2>
             </div>
-            <form action="" class="formulario">
+            <form action="" class="formulario" id="loginForm">
                 <div>
-                    <label>Dirección de correo electronico:</label>
+                    <label for="email">Dirección de correo electronico:</label>
                     <input type="email" name="email" id="email" placeholder="Email..." required>
                 </div>
                 <div>
-                    <label>Contraseña:</label>
-                    <input type="password" name="pass" id="pass" placeholder="***************" required>
+                    <label for="password">Contraseña:</label>
+                    <input type="password" name="password" id="password" placeholder="***************" required>
                 </div>
                 <div>
-                    <button type="submit" formaction="../index.html">Iniciar Sesión</button>
+                    <button type="submit">Iniciar Sesión</button>
                 </div>
+                <p id="mensajeLogin"></p>
             </form>
             <section class="ayuda">
                 <div>
@@ -145,6 +146,36 @@
             </section>
         </section>
     </main>
+
+    <section id="loginSucessFull">
+        <div id>
+            <ul>
+                <li>Mis Datos</li>
+            </ul>
+        </div>
+        <div id="informationContact">
+            <div>
+                <p>Información de contacto</p>
+            </div>
+            <div>
+                <div>
+                    <p></p>
+                    <p id="name"></p>
+                </div>
+                <div>
+                    <p></p>
+                    <p id="rut"></p>
+                </div>
+                <div>
+                    <p></p>
+                    <p id="email"></p>
+                </div>
+            </div>
+        </div>
+        <div id="address">
+
+        </div>
+    </section>
 
     <!-- Seccion footer -->
     <footer id="piepagina">
@@ -184,6 +215,7 @@
         </section>
     </footer>
 
+    <script src="../scripts/user.js"></script>
     <script src="https://kit.fontawesome.com/a2dd6045c4.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
