@@ -222,6 +222,9 @@ if(currentPage === "/GangaStore/pages/login.html"){
                 //Guardar el array en localStorage para que si el usuario que se desea logear y creo cuenta nueva, siempre esten los datos y no se pierdan al recargar o cambiar la pagina
                 const USERSARRAYJSON = JSON.stringify(ARRAYUSERSOBJECTS)
                 localStorage.setItem("USUARIOS", USERSARRAYJSON);
+
+                //Redirigir al login
+                window.location.href = './login.html';
             }
         }else{
             if((getPhone.length < 11 || getPhone.length > 11) || (getRut.length < 9 || getRut.length > 10) || getPassword != getRepeatPassword){
@@ -242,6 +245,9 @@ if(currentPage === "/GangaStore/pages/login.html"){
                 //Guardar el array en localStorage para que si el usuario que se desea logear y creo cuenta nueva, siempre esten los datos y no se pierdan al recargar o cambiar la pagina
                 const USERSARRAYJSON = JSON.stringify(USERSARRAY);
                 localStorage.setItem("USUARIOS", USERSARRAYJSON);
+
+                //Redirigir al login
+                window.location.href = './login.html';
             }
         }
     });
