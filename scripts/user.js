@@ -30,7 +30,7 @@ let currentPage = window.location.pathname;
 console.log(currentPage);
 
 //Condicion de pagina
-if(currentPage === "/gangastore/pages/login.html"){
+if(currentPage === "/GangaStore/pages/login.html"){
 
     //Evento de inicio de sesión
     document.getElementById("loginForm").addEventListener('submit', (event)=>{
@@ -74,7 +74,7 @@ if(currentPage === "/gangastore/pages/login.html"){
             }
         }
     });
-}else if(currentPage === "/gangastore/pages/registeruser.html"){
+}else if(currentPage === "/GangaStore/pages/registeruser.html"){
 
     //Definir arrays para regions y communes
     const regions = ["Región Metropolitana", "Valparaíso", "Arica y Parinacota", "Tarapacá", "Antofagasta", "Atacama", "Coquimbo", "Valle del Aconcagua", "O'Higgins", "Maule", "Ñuble", "Biobío", "La Araucanía", "Los Ríos", "Los Lagos", "Aysén del General Carlos Ibáñez del Campo", "Magallanes y de la Antártica Chilena"];
