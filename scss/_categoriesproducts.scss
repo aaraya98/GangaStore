@@ -96,11 +96,14 @@
                                 text-decoration: none;
                             }
                             .cartplus{
-                                padding-right: 10%;
-                                color: #333;
+                                border: none;
+                                background-color: white;
+                                width: 35%;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
                                 i{
-                                    font-size: 2rem;
-                                    height: 2.1rem;
+                                    pointer-events: none;
                                 }
                             }
                         }

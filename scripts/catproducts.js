@@ -1,10 +1,7 @@
-// script.js
-//fALTA CREARLE UN ID A LOS PRODUCTOS, CADA SKU ES UNICO, PERO EL ID SERA EL REPRESENTATIVO
-
 //Constructor de productos
-class Producto {
-    constructor(id, marca, nombre, sku, stock, imagen, precio, precioAnterior) {
-        this,id = id;
+class Producto{
+    constructor(id, marca, nombre, sku, stock, imagen, precio, precioAnterior){
+        this.id = id;
         this.marca = marca;
         this.nombre = nombre;
         this.sku = sku;
@@ -12,11 +9,11 @@ class Producto {
         this.imagen = imagen;
         this.precio = precio;
         this.precioAnterior = precioAnterior;
-    }
-}
+    };
+};
 
 //Array de objetos de los productos
-const productosArray = [
+const PRODUCTOSARRAY = [
     new Producto(1, "Logitech", "Mouse Gamer G305 Ligthspeed Wireless Negro", "5L3M1G8W", 150, "../images/L-G305-LS.jpg", 39000, 40990),
     new Producto(2, "Logitech", "Mouse Gamer G502 X PLUS Wireless Blanco", "5L5MXPWB", 14, "../images/L-G502-XP.jpg", 129990, 179990),
     new Producto(3, "Victus", "Notebook Gamer Victus Intel i5-11400H NVIDIA RTX 3050 4GB 16.1\" FHD 60Hz 8GB RAM 256GB SSD Windows 11 16-d0500la Performance Blue", "8NV5R3W1", 20, "../images/V-16I5R3-NG.jpg", 1079990, 1349990),
@@ -38,7 +35,7 @@ const productosArray = [
 ];
 
 //Funcion para crear los productos
-function crearCard(producto) {
+function crearCard(producto){
     //Identificamos donde se comenzara a crear las listas que es el ul
     const listaProductos = document.getElementById("productList");
 
@@ -96,10 +93,10 @@ function crearCard(producto) {
     productPreValue.className = "productprevalue";
     productPreValue.innerHTML = `<span><s>$ ${producto.precioAnterior}</s></span>`;
 
-    //Creamos el ancla que tendra el logo carrito y su direccionamiento
-    const cartPlus = document.createElement("a");
-    cartPlus.href = "../pages/shoppingcart.html";
+    //Creamos el boton que tendra el logo carrito y su direccionamiento
+    const cartPlus = document.createElement("button");
     cartPlus.className = "cartplus";
+    cartPlus.id = `${producto.id}`
     cartPlus.innerHTML = '<i class="fa fa-cart-plus"></i>';
 
     //Agregamos los creado a value
@@ -118,7 +115,7 @@ function crearCard(producto) {
 }
 
 //Funcion para colocar puntos a los valores de los productos, lee de izquierda a derecha y cada 3 numeros coloca un punto
-function formatNumberWithComma(number) {
+function formatNumberWithComma(number){
     //Convierte el número a una cadena y revierte el orden
     const reversedNumberString = String(number).split('').reverse().join('');
 
@@ -131,13 +128,36 @@ function formatNumberWithComma(number) {
     return formattedNumber;
 }
 
-//Actualizar precios de productos con formato
-for (const producto of productosArray) {
-    producto.precio = formatNumberWithComma(producto.precio);
-    producto.precioAnterior = formatNumberWithComma(producto.precioAnterior);
-}
-
-//Generar los productos en el HTML
-for (const producto of productosArray) {
-    crearCard(producto);
+//Verificar si ya esta en localStorage
+if(localStorage.getItem("productosStock")){
+    const ARRAYPRODUCTSSTRING = localStorage.getItem("productosStock");
+    const ARRAYPRODUCTSOBJECTS = JSON.parse(ARRAYPRODUCTSSTRING);
+    //Actualizar precios de productos con formato
+    for(const producto of ARRAYPRODUCTSOBJECTS){
+        producto.precio = formatNumberWithComma(producto.precio);
+        producto.precioAnterior = formatNumberWithComma(producto.precioAnterior);
+    }
+    //Generar los productos en el HTML
+    for(const producto of ARRAYPRODUCTSOBJECTS){
+        //Si el stock es 0 no lo mostrara para evitar confusiones de productos
+        if(producto.stock > 0){
+            crearCard(producto);
+        }
+    }
+}else{
+    //Guardar el array en el localStorage para utilizarlo en otra pagina y en el shoppingCart
+    const PRODUCTOSSTOCK = JSON.stringify(PRODUCTOSARRAY);
+    localStorage.setItem("productosStock", PRODUCTOSSTOCK);
+    //Actualizar precios de productos con formato
+    for(const producto of PRODUCTOSARRAY){
+        producto.precio = formatNumberWithComma(producto.precio);
+        producto.precioAnterior = formatNumberWithComma(producto.precioAnterior);
+    }
+    //Generar los productos en el HTML
+    for(const producto of PRODUCTOSARRAY){
+        //Si el stock es 0 no lo mostrara para evitar confusiones de productos
+        if(producto.stock > 0){
+            crearCard(producto);
+        }
+    }
 }

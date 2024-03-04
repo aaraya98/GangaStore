@@ -137,13 +137,12 @@ if(currentPage === "/gangastore/pages/login.html"){
     });
 
     //Eliminar letras del input telefono
-    let telefono = document.getElementById('telefono');
     //Evento de telefono
-    telefono.addEventListener('input', function(){
+    document.getElementById('telefono').addEventListener('input', function(){
         //Reemplaza cualquier caracter que no sea un numero con una cadena vacia
         this.value = this.value.replace(/\D/g, '');
         let phone = document.getElementById('telefono').value;
-        if(phone.length < 11){
+        if(phone.length < 11 || phone.length > 11){
             document.getElementById('mensajePhone').innerHTML = "El numero telefonico debe de tener el mismo largo que el ejemplo";
         }else{
             document.getElementById('mensajePhone').innerHTML = "";
@@ -151,12 +150,17 @@ if(currentPage === "/gangastore/pages/login.html"){
     });
 
     //Eliminar letras del input rut/dni y solo asignar una k despues del -
-    let rut = document.getElementById('rut');
     //Evento de rut/dni
-    rut.addEventListener('input', function(){
+    document.getElementById('rut').addEventListener('input', function(){
          //Reemplaza cualquier caracter que no sea un numero con una cadena vacia, despues del - aceptara numeros o una letra k
          //Asi estan estipulados los rut o dni en chile
         this.value = this.value.replace(/[^0-9kK-]/g, '');
+        let rut = document.getElementById('rut').value;
+        if(rut.length < 9 || rut.length > 10){
+            document.getElementById('mensajeRutDni').innerHTML = "El RUT/DNI ingresado debe de ser parecido al ejemplo";
+        }else{
+            document.getElementById('mensajeRutDni').innerHTML = "";
+        }
     });
 
     //Evento de password para comentar al usuario las condiciones de las mismas
@@ -195,35 +199,50 @@ if(currentPage === "/gangastore/pages/login.html"){
         let getPassword = document.getElementById('password').value;
         let getRepeatPassword = document.getElementById('repetir_password').value;
 
-        if(getPassword === getRepeatPassword){
-            //Extraigo el ultimo objeto del array
-            let lastObject = USERSARRAY[USERSARRAY.length - 1];
-            //Extraigo el id del ultimo objeto y le sumo un 1 
-            let lastId = lastObject.id+1;
-
-            //Crear e incorporar los datos recopilados al array creando un nuevo objeto usuario
-            const newUser = new User(
-                lastId, getNames, getLastNames, getRut, getPhone, getEmail,
-                getPassword, getStreet, getNumberStreet, getPlace, getRegion, getCommune
-            );
-            USERSARRAY.push(newUser);
-
-            //Guardar el array en localStorage para que si el usuario que se desea logear y creo cuenta nueva, siempre esten los datos y no se pierdan al recargar o cambiar la pagina
-            const USERSARRAYJSON = JSON.stringify(USERSARRAY)
-            localStorage.setItem("USUARIOS", USERSARRAYJSON);
+        //Extraer del localStorage el array USUARIOS
+        const ARRAYUSERSSTRING = localStorage.getItem("USUARIOS");
+        const ARRAYUSERSOBJECTS = JSON.parse(ARRAYUSERSSTRING);
+        //Condicion de ARRAY por existencia en localStorage
+        if(localStorage.getItem("USUARIOS")){
+            if((getPhone.length < 11 || getPhone.length > 11) || (getRut.length < 9 || getRut.length > 10) || getPassword != getRepeatPassword){
+                alert("Los datos ingresados son erroneos, favor revisar rut, telefono o contraseña");
+            }else{
+                //Extraigo el ultimo objeto del array
+                let lastObject = ARRAYUSERSOBJECTS[ARRAYUSERSOBJECTS.length - 1];
+                //Extraigo el id del ultimo objeto y le sumo un 1 
+                let lastId = lastObject.id+1;
+    
+                //Crear e incorporar los datos recopilados al array creando un nuevo objeto usuario
+                const newUser = new User(
+                    lastId, getNames, getLastNames, getRut, getPhone, getEmail,
+                    getPassword, getStreet, getNumberStreet, getPlace, getRegion, getCommune
+                );
+                ARRAYUSERSOBJECTS.push(newUser);
+    
+                //Guardar el array en localStorage para que si el usuario que se desea logear y creo cuenta nueva, siempre esten los datos y no se pierdan al recargar o cambiar la pagina
+                const USERSARRAYJSON = JSON.stringify(ARRAYUSERSOBJECTS)
+                localStorage.setItem("USUARIOS", USERSARRAYJSON);
+            }
         }else{
-            alert("Favor de revisar los datos ingresados");
-        
+            if((getPhone.length < 11 || getPhone.length > 11) || (getRut.length < 9 || getRut.length > 10) || getPassword != getRepeatPassword){
+                alert("Los datos ingresados son erroneos, favor revisar rut, telefono o contraseña");
+            }else{
+                //Extraigo el ultimo objeto del array
+                let lastObject = USERSARRAY[USERSARRAY.length - 1];
+                //Extraigo el id del ultimo objeto y le sumo un 1 
+                let lastId = lastObject.id+1;
+    
+                //Crear e incorporar los datos recopilados al array creando un nuevo objeto usuario
+                const newUser = new User(
+                    lastId, getNames, getLastNames, getRut, getPhone, getEmail,
+                    getPassword, getStreet, getNumberStreet, getPlace, getRegion, getCommune
+                );
+                USERSARRAY.push(newUser);
+    
+                //Guardar el array en localStorage para que si el usuario que se desea logear y creo cuenta nueva, siempre esten los datos y no se pierdan al recargar o cambiar la pagina
+                const USERSARRAYJSON = JSON.stringify(USERSARRAY);
+                localStorage.setItem("USUARIOS", USERSARRAYJSON);
+            }
         }
     });
 };
-
-//Comprobar si el usuario esta conectado
-window.addEventListener('load', function(){
-    if(localStorage.getItem('logCorrecto')){
-        // window.location.href = '../index.html'
-        //Aqui planeo crear una condicion que cuando el usuario tenga logeo true por localStorage, ya no
-        //muestre la sección del login, si no que muestre los datos del usuario ya logeado cambiando a display none 
-        //la primera seccion.
-    }
-})

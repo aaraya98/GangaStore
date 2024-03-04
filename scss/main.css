@@ -144,6 +144,9 @@
 #cabezal .containercabezal .sesioncarro .container-fluid .modal .modal-dialog .modal-content .modal-body .table tbody tr td:last-child button i {
   color: red;
 }
+#cabezal .containercabezal .sesioncarro .container-fluid .modal .modal-dialog .modal-content .modal-body .table tfoot tr td {
+  font-size: 0.8rem;
+}
 #cabezal .containercabezal .sesioncarro .container-fluid .modal .modal-dialog .modal-content .modal-footer {
   display: flex;
   align-content: center;
@@ -621,12 +624,15 @@
   text-decoration: none;
 }
 #containercategoriesproducts #containercatproducts .contcatproducts .catproducts .products .product .valuecart .cartplus {
-  padding-right: 10%;
-  color: #333;
+  border: none;
+  background-color: white;
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #containercategoriesproducts #containercatproducts .contcatproducts .catproducts .products .product .valuecart .cartplus i {
-  font-size: 2rem;
-  height: 2.1rem;
+  pointer-events: none;
 }
 #containercategoriesproducts #containercatproducts .contcatproducts .pagforcat {
   display: flex;
