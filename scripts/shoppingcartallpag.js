@@ -53,20 +53,18 @@ window.addEventListener('load', function(){
                     renderizarCarrito();
                 }
             }
-            //Compra realizada al darle click al boton de confirmar compra
-            function realizarCompra(){
-                let precioTotalPagado = document.getElementById("precioTotal").innerText;
-                if(precioTotalPagado === "$ 0"){
-                    alert(`El carrito esta vacio`);
-                }else{
-                    alert(`compra finalizada ${precioTotalPagado}`);
-                    cartItem.length = 0;
-                    localStorage.setItem('cartItems', JSON.stringify(cartItems));
-                    renderizarCarrito();
-                }
-            }
             //Darle la función al boton de confirmar compra
-            document.getElementById('payCart').addEventListener('click',realizarCompra);
+            let currentPage = window.location.pathname;
+            console.log(currentPage);
+            if(currentPage === "/GangaStore/index.html"){
+                document.getElementById('payCart').addEventListener('click', ()=>{
+                    window.location.href = './pages/shoppingcart.html'
+                });
+            }else{
+                document.getElementById('payCart').addEventListener('click', ()=>{
+                    window.location.href = './shoppingcart.html'
+                });
+            }
             renderizarCarrito();
         }
     }

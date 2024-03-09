@@ -73,16 +73,10 @@ function eliminarDelCarrito(idProducto){
     }
 }
 
-//Compra realizada al darle click al boton de confirmar compra
-function realizarCompra(){
-    let precioTotalPagado = document.getElementById("precioTotal").innerText;
-    alert(`compra finalizada ${precioTotalPagado}`);
-    cartItems.length = 0;
-    localStorage.setItem('cartItems', JSON.stringify(cartItems));
-    renderizarCarrito();
-}
 //Darle la función al boton de confirmar compra
-document.getElementById('payCart').addEventListener('click',realizarCompra);
+document.getElementById('payCart').addEventListener('click', ()=>{
+    window.location.href = './shoppingcart.html'
+});
 
 
 //Comprobar si el usuario tiene guardado productos en el carrito para despues de salir y entrar vuelva aparecer
@@ -133,20 +127,10 @@ window.addEventListener('load', function(){
                     renderizarCarrito();
                 }
             }
-            //Compra realizada al darle click al boton de confirmar compra
-            function realizarCompra(){
-                let precioTotalPagado = document.getElementById("precioTotal").innerText;
-                if(precioTotalPagado === "$ 0"){
-                    alert(`El carrito esta vacio`);
-                }else{
-                    alert(`compra finalizada ${precioTotalPagado}`);
-                    cartItem.length = 0;
-                    localStorage.setItem('cartItems', JSON.stringify(cartItems));
-                    renderizarCarrito();
-                }
-            }
             //Darle la función al boton de confirmar compra
-            document.getElementById('payCart').addEventListener('click',realizarCompra);
+            document.getElementById('payCart').addEventListener('click', ()=>{
+                window.location.href = './shoppingcart.html'
+            });
             renderizarCarrito();
         }
     }
