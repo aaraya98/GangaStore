@@ -31,7 +31,6 @@ console.log(currentPage);
 
 //Condicion de pagina
 if(currentPage === "/GangaStore/pages/login.html"){
-
     //Evento de inicio de sesión
     document.getElementById("loginForm").addEventListener('submit', (event)=>{
         event.preventDefault();
@@ -87,6 +86,10 @@ if(currentPage === "/GangaStore/pages/login.html"){
             }
         }
     });
+    if(localStorage.getItem("USUARIOS") === null){
+        const USERSARRAYJSON = JSON.stringify(USERSARRAY)
+        localStorage.setItem("USUARIOS", USERSARRAYJSON); 
+    }
 }else if(currentPage === "/GangaStore/pages/registeruser.html"){
 
     //Definir arrays para regions y communes
