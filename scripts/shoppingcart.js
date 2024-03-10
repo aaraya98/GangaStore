@@ -60,6 +60,11 @@ productList.addEventListener('click',function(evento){
             const idProducto = parseInt(evento.target.getAttribute('id'));
             addCart(idProducto);
             localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            Swal.fire({
+                icon: "success",
+                title: "Producto agregado al carrito de compras",
+                confirmButtonText:"aceptar"
+            })
     }
 });
 

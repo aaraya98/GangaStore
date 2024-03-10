@@ -55,6 +55,19 @@ if(currentPage === "/GangaStore/pages/login.html"){
                     window.location.href = '../index.html'
                 }else{
                     document.getElementById('mensajeLogin').innerHTML = "No estan correctos los datos ingresados";
+                    Swal.fire({
+                        icon: "error",
+                        title: "Datos incorrectos",
+                        text: "Por favor, verifica tus credenciales e intenta nuevamente.",
+                        position: "top-end",
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                        toast.onmouseenter = Swal.stopTimer;
+                        toast.onmouseleave = Swal.resumeTimer;
+                        }
+                    });
                 }
             }
         }else{
@@ -204,8 +217,20 @@ if(currentPage === "/GangaStore/pages/login.html"){
         const ARRAYUSERSOBJECTS = JSON.parse(ARRAYUSERSSTRING);
         //Condicion de ARRAY por existencia en localStorage
         if(localStorage.getItem("USUARIOS")){
-            if((getPhone.length < 11 || getPhone.length > 11) || (getRut.length < 9 || getRut.length > 10) || getPassword != getRepeatPassword){
-                alert("Los datos ingresados son erroneos, favor revisar rut, telefono o contraseña");
+            if((getPhone.length < 11 || getPhone.length > 11) || (getRut.length < 9 || getRut.length > 10) || (getPassword != getRepeatPassword && getRepeatPassword < 8)){
+                Swal.fire({
+                    icon: "error",
+                    title: "Datos incorrectos",
+                    text: "Por favor, verifica rut, telefono o contraseña e intenta nuevamente.",
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                    toast.onmouseenter = Swal.stopTimer;
+                    toast.onmouseleave = Swal.resumeTimer;
+                    }
+                });
             }else{
                 //Extraigo el ultimo objeto del array
                 let lastObject = ARRAYUSERSOBJECTS[ARRAYUSERSOBJECTS.length - 1];
@@ -227,8 +252,20 @@ if(currentPage === "/GangaStore/pages/login.html"){
                 window.location.href = './login.html';
             }
         }else{
-            if((getPhone.length < 11 || getPhone.length > 11) || (getRut.length < 9 || getRut.length > 10) || getPassword != getRepeatPassword){
-                alert("Los datos ingresados son erroneos, favor revisar rut, telefono o contraseña");
+            if((getPhone.length < 11 || getPhone.length > 11) || (getRut.length < 9 || getRut.length > 10) || (getPassword != getRepeatPassword && getRepeatPassword < 8)){
+                Swal.fire({
+                    icon: "error",
+                    title: "Datos incorrectos",
+                    text: "Por favor, verifica rut, telefono o contraseña e intenta nuevamente.",
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                    toast.onmouseenter = Swal.stopTimer;
+                    toast.onmouseleave = Swal.resumeTimer;
+                    }
+                });
             }else{
                 //Extraigo el ultimo objeto del array
                 let lastObject = USERSARRAY[USERSARRAY.length - 1];

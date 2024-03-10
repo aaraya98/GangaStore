@@ -70,3 +70,8 @@
 @import 'resgisteruser';
 @import 'contact';
 @import 'mediaquery';
+
+//ajustar icono a GangaStore de sweetalert
+.swal2-icon{
+    overflow: hidden;
+}

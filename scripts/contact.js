@@ -1,9 +1,8 @@
 //Funcion para llenar los option del select motivo
 function reiniciarSelect(){
-    var selectElement = document.getElementById("motivo");
     function agregarOpcion(valor, texto) {
-        var selectElement = document.getElementById("motivo");
-        var option = document.createElement("option");
+        let selectElement = document.getElementById("motivo");
+        let option = document.createElement("option");
         option.value = valor;
         option.text = texto;
         selectElement.add(option);
@@ -52,11 +51,35 @@ document.getElementById("contactUserForm").addEventListener('submit', (event)=>{
     let comment = document.getElementById('comentarios').value;
 
     if(reason === "consultas" || phoneNumber.length < 11 || (rutDni.length < 9 || rutDni.length > 10)){
-        alert("Los datos ingresados son erroneos, favor revisar rut, telefono o motivo");
+        Swal.fire({
+            icon: "error",
+            title: "Datos incorrectos",
+            text: "Por favor, verifica rut, telefono o motivo e intenta nuevamente.",
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+            toast.onmouseenter = Swal.stopTimer;
+            toast.onmouseleave = Swal.resumeTimer;
+            }
+        });
     }else{
         //ya con backend se puede enviar al correo de soporte o consultas corporativo
-        alert("Datos enviados exitosamente");
-        //Redirigir al index
-        window.location.href = '../index.html'
+        Swal.fire({
+            icon: "success",
+            title: "Datos enviados exitosamente",
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+            toast.onmouseenter = Swal.stopTimer;
+            toast.onmouseleave = Swal.resumeTimer;},
+            willClose: () => {
+                // Redirigir al index después de que la alerta se haya cerrado
+                window.location.href = '../index.html';
+            }
+        });
     }
 })

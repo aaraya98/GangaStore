@@ -133,12 +133,30 @@ function eliminarProducto(idProducto){
 function realizarCompra(){
     let precioTotalPagado = document.getElementById("totalPrice").innerText;
     if(precioTotalPagado === "$ 0"){
-        alert("No hay productos en el carrito de compras");
+        Swal.fire({
+            icon: "error",
+            title: "No hay productos en el carrito",
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+            toast.onmouseenter = Swal.stopTimer;
+            toast.onmouseleave = Swal.resumeTimer;
+            }
+        });
     }else{
-        alert(`compra finalizada por: ${precioTotalPagado}`);
         cartItems.length = 0;
         localStorage.setItem('cartItems', JSON.stringify(cartItems));
         renderizarCarrito();
+        Swal.fire({
+            icon: "success",
+            title: `compra finalizada por: ${precioTotalPagado}`,
+            confirmButtonText:"aceptar"
+        }).then(() => {
+            // Recargar la página después de cerrar el SweetAlert
+            location.reload();
+        });
     }
 }
 //Darle la función al boton de confirmar compra
