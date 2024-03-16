@@ -692,16 +692,6 @@
 #productcontainer .proproduct .imagesproproduct .mainimgproproduct img {
   width: 100%;
 }
-#productcontainer .proproduct .imagesproproduct .secondaryimgproproduct {
-  margin-top: 10px;
-  width: 90%;
-  height: auto;
-  display: flex;
-  justify-content: space-between;
-}
-#productcontainer .proproduct .imagesproproduct .secondaryimgproproduct img {
-  border: 1px solid black;
-}
 #productcontainer .proproduct .detallesproproduct {
   grid-column-start: 2;
   grid-column-end: 3;
