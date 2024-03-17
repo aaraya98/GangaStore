@@ -141,6 +141,9 @@
   padding-left: 5px;
   padding-right: 5px;
 }
+#cabezal .containercabezal .sesioncarro .container-fluid .modal {
+  max-height: 80%;
+}
 #cabezal .containercabezal .sesioncarro .container-fluid .modal .modal-dialog .modal-content .modal-body .table tbody tr td:last-child button i {
   color: red;
 }

@@ -1,12 +1,13 @@
 //Constructor de productos
 class Producto{
-    constructor(id, marca, nombre, sku, stock, imagen, precio, precioAnterior){
+    constructor(id, marca, nombre, sku, stock, imagen, descriptionImage, precio, precioAnterior){
         this.id = id;
         this.marca = marca;
         this.nombre = nombre;
         this.sku = sku;
         this.stock = stock;
         this.imagen = imagen;
+        this.descriptionImage = descriptionImage;
         this.precio = precio;
         this.precioAnterior = precioAnterior;
     };
@@ -14,24 +15,24 @@ class Producto{
 
 //Array de objetos de los productos
 const PRODUCTOSARRAY = [
-    new Producto(1, "Logitech", "Mouse Gamer G305 Ligthspeed Wireless Negro", "5L3M1G8W", 150, "../images/L-G305-LS.jpg", 39000, 40990),
-    new Producto(2, "Logitech", "Mouse Gamer G502 X PLUS Wireless Blanco", "5L5MXPWB", 14, "../images/L-G502-XP.jpg", 129990, 179990),
-    new Producto(3, "Victus", "Notebook Gamer Victus Intel i5-11400H NVIDIA RTX 3050 4GB 16.1\" FHD 60Hz 8GB RAM 256GB SSD Windows 11 16-d0500la Performance Blue", "8NV5R3W1", 20, "../images/V-16I5R3-NG.jpg", 1079990, 1349990),
-    new Producto(4, "Gear", "Desktop Gamer Red Demon AMD Ryzen 5 5600X 8GB 240GB SSD NVIDIA PH-GTX 1650 4GB", "TO10GR5G", 2, "../images/T-GGEAR-RG.jpg", 499990, 750990),
-    new Producto(5, "Logitech", "Mouse Gamer G604 Lightspeed Wireless-Bluetooth Negro", "5L6M2G40", 28, "../images/L-G604-LS.jpg", 63990, 79990),
-    new Producto(6, "HyperX", "Teclado Gamer HyperX Alloy Elite2 Mecánico Español", "1THAL2ME", 3, "../images/H-ELITE2-ME.jpg", 119990, 139990),
-    new Producto(7, "Dell", "Notebook Inspiron 3520 Intel i5-1135G7 15.6\" FHD 8GB 256GB SSD Windows 11", "8NDII5W1", 100, "../images/N-DINS-I5.jpg", 349990, 549990),
-    new Producto(8, "Asus", "Notebook TUF Gaming F15 FX506 Intel Core i5-11400H NVIDIA RTX 2050 4GB 15.6\" FHD 144Hz 8GB 512GB SSD Windows 11 Graphite Black", "7H1G54TG", 78, "../images/N-AF15-TG.jpg", 649990, 779990),
-    new Producto(9, "Apple", "MacBook Air 13\" (Chip M1 CPU 8 núcleos GPU 7 núcleos, 8GB RAM, 256GB SSD) - Gris espacial", "AM15713A", 6, "../images/N-APA13-M1.jpg", 849990, 1099990),
-    new Producto(10, "Samsung", "Notebook Galaxy Book3 360 13.3\"FHD AMOLED Intel Core i7-1355U 8GB 512GB SSD Windows 11 Silver", "5FJHW421", 31, "../images/N-SBK3-21.jpg", 990990, 1229990),
-    new Producto(11, "HP", "Notebook 2 en 1 HP Pavilion x360 14\" FHD Intel Core i5-1235U 8GB 512GB SSD Windows 11 Natural Silver 14-dy2003la", "568UFN2Q", 8, "../images/N-HP21-PX.jpg", 829990, 889990),
-    new Producto(12, "Asus", "Notebook Zenbook 14X OLED UX3404 14.5\" 2K Intel Core i9-13900H 16GB 1TB SSD Windows 11 Inkwell Gray UX3404VA-M9115W", "5L3M1G8W", 100, "../images/N-AZ14X-UX.jpg", 1169990, 1499990),
-    new Producto(13, "AMD", "CPU Ryzen 5 5600G (AM4)", "AMD5A46G", 30, "../images/CPU-R5-4.jpg", 149990, 154590),
-    new Producto(14, "Gamdias", "Gabinete ATX Aura GC1 / 4 Ventiladores ARGB", "GAB7157A", 17, "../images/GAB-GAMAURA-GC1.jpg", 52990, 55790),
-    new Producto(15, "Asus", "Video AMD Radeon RX560 4G ROG STRIX V2", "G75UARX4", 100, "../images/GPU-ARX5-4.jpg", 92990, 97890),
-    new Producto(16, "Corsair", "CORSAIR RM750e Full Modular Low-Noise ATX Power Supply - Dual EPS12V Connectors - 105°C-Rated Capacitors - 80 PLUS Gold", "FP780PGM", 100, "../images/FP-COR50-PG.jpg", 109990, 115790),
-    new Producto(17, "Gigabyte", "M/B AMD B550M DS3H (AM4)", "PMJG748A", 50, "../images/PM-GB5_DH.jpg", 135990, 143190),
-    new Producto(18, "Crucial", "DDR4 8GB 2666MHz Value", "JHGYU951", 100, "../images/MR-CLD4-26MH.jpg", 18990, 22990)
+    new Producto(1, "Logitech", "Mouse Gamer G305 Ligthspeed Wireless Negro", "5L3M1G8W", 150, "../images/L-G305-LS.jpg", "../images/descripcion-mouse-lg305.jpg", 39000, 40990),
+    new Producto(2, "Logitech", "Mouse Gamer G502 X PLUS Wireless Blanco", "5L5MXPWB", 14, "../images/L-G502-XP.jpg", "../images/descripcion-mouse-lg502.jpg", 129990, 179990),
+    new Producto(3, "Victus", "Notebook Gamer Victus Intel i5-11400H NVIDIA RTX 3050 4GB 16.1\" FHD 60Hz 8GB RAM 256GB SSD Windows 11 16-d0500la Performance Blue", "8NV5R3W1", 20, "../images/V-16I5R3-NG.jpg", "../images/descripcion-notebook-victus.jpg", 1079990, 1349990),
+    new Producto(4, "Gear", "Desktop Gamer Red Demon AMD Ryzen 5 5600X 8GB 240GB SSD NVIDIA PH-GTX 1650 4GB", "TO10GR5G", 2, "../images/T-GGEAR-RG.jpg", "../images/descripcion-desktop-reddemon.jpg", 499990, 750990),
+    new Producto(5, "Logitech", "Mouse Gamer G604 Lightspeed Wireless-Bluetooth Negro", "5L6M2G40", 28, "../images/L-G604-LS.jpg", "", 63990, 79990),
+    new Producto(6, "HyperX", "Teclado Gamer HyperX Alloy Elite2 Mecánico Español", "1THAL2ME", 3, "../images/H-ELITE2-ME.jpg", "", 119990, 139990),
+    new Producto(7, "Dell", "Notebook Inspiron 3520 Intel i5-1135G7 15.6\" FHD 8GB 256GB SSD Windows 11", "8NDII5W1", 100, "../images/N-DINS-I5.jpg", "", 349990, 549990),
+    new Producto(8, "Asus", "Notebook TUF Gaming F15 FX506 Intel Core i5-11400H NVIDIA RTX 2050 4GB 15.6\" FHD 144Hz 8GB 512GB SSD Windows 11 Graphite Black", "7H1G54TG", 78, "../images/N-AF15-TG.jpg", "../images/descripcion-notebook-f15-fx506.jpg", 649990, 779990),
+    new Producto(9, "Apple", "MacBook Air 13\" (Chip M1 CPU 8 núcleos GPU 7 núcleos, 8GB RAM, 256GB SSD) - Gris espacial", "AM15713A", 6, "../images/N-APA13-M1.jpg", "", 849990, 1099990),
+    new Producto(10, "Samsung", "Notebook Galaxy Book3 360 13.3\"FHD AMOLED Intel Core i7-1355U 8GB 512GB SSD Windows 11 Silver", "5FJHW421", 31, "../images/N-SBK3-21.jpg", "", 990990, 1229990),
+    new Producto(11, "HP", "Notebook 2 en 1 HP Pavilion x360 14\" FHD Intel Core i5-1235U 8GB 512GB SSD Windows 11 Natural Silver 14-dy2003la", "568UFN2Q", 8, "../images/N-HP21-PX.jpg", "", 829990, 889990),
+    new Producto(12, "Asus", "Notebook Zenbook 14X OLED UX3404 14.5\" 2K Intel Core i9-13900H 16GB 1TB SSD Windows 11 Inkwell Gray UX3404VA-M9115W", "5L3M1G8W", 100, "../images/N-AZ14X-UX.jpg", "", 1169990, 1499990),
+    new Producto(13, "AMD", "CPU Ryzen 5 5600G (AM4)", "AMD5A46G", 30, "../images/CPU-R5-4.jpg", "", 149990, 154590),
+    new Producto(14, "Gamdias", "Gabinete ATX Aura GC1 / 4 Ventiladores ARGB", "GAB7157A", 17, "../images/GAB-GAMAURA-GC1.jpg", "", 52990, 55790),
+    new Producto(15, "Asus", "Video AMD Radeon RX560 4G ROG STRIX V2", "G75UARX4", 100, "../images/GPU-ARX5-4.jpg", "", 92990, 97890),
+    new Producto(16, "Corsair", "CORSAIR RM750e Full Modular Low-Noise ATX Power Supply - Dual EPS12V Connectors - 105°C-Rated Capacitors - 80 PLUS Gold", "FP780PGM", 100, "../images/FP-COR50-PG.jpg", "", 109990, 115790),
+    new Producto(17, "Gigabyte", "M/B AMD B550M DS3H (AM4)", "PMJG748A", 50, "../images/PM-GB5_DH.jpg", "", 135990, 143190),
+    new Producto(18, "Crucial", "DDR4 8GB 2666MHz Value", "JHGYU951", 100, "../images/MR-CLD4-26MH.jpg", "", 18990, 22990)
 ];
 
 //Funcion para crear los productos
@@ -47,6 +48,9 @@ function crearCard(producto){
     const a = document.createElement("a");
     a.href = "../pages/product.html";
     a.className = "productinfo";
+    a.addEventListener('click', function() {
+        localStorage.setItem("selectedProductID", producto.id);
+    });
 
     //Creamos el div que tiene la marca y el logo registrado
     const trademark = document.createElement("div");
@@ -82,6 +86,9 @@ function crearCard(producto){
     const value = document.createElement("a");
     value.href = "../pages/product.html";
     value.className = "value";
+    value.addEventListener('click', function() {
+        localStorage.setItem("selectedProductID", producto.id);
+    });
 
     //Creamos el div que contiene el precio actual del producto
     const productValue = document.createElement("div");

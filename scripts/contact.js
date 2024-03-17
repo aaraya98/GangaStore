@@ -24,6 +24,12 @@ document.getElementById('rut').addEventListener('input', function(){
      //Reemplaza cualquier caracter que no sea un numero con una cadena vacia, despues del - aceptara numeros o una letra k
      //Asi estan estipulados los rut o dni en chile
     this.value = this.value.replace(/[^0-9kK-]/g, '');
+    let rutDni = document.getElementById('rut').value;
+    if(rutDni.length < 9 || rutDni.length > 10){
+        document.getElementById('mensajeRut').innerHTML = "Verificar el rut ingresado";
+    }else{
+        document.getElementById('mensajeRut').innerHTML = "";
+    }
 });
 
 //Evento de telefono, solo acepta numeros

@@ -6,7 +6,7 @@ const totalCart = document.getElementById("totalCart");//Total de los productos 
 
 
 //Comprobar si el usuario tiene guardado al en el carrito
-window.addEventListener('load', function(){
+document.getElementById('cartShoppings').addEventListener('click', function(){
     if(localStorage.getItem('cartItems')){
         let cart = localStorage.getItem("cartItems");
         let cartItem = JSON.parse(cart);

@@ -99,7 +99,7 @@ function renderizarCarrito() {
 
 function incrementar(id) {
     const item = cartItems.find(item => item.id === id);
-    if (item) {
+    if (item && item.cantidad < item.stock) {
         item.cantidad++;
         renderizarCarrito();
         guardarCarritoEnLocalStorage();
