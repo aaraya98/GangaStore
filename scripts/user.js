@@ -36,63 +36,61 @@ if(currentPage === "/GangaStore/pages/login.html"){
         event.preventDefault();
         let getEmail = document.getElementById('email').value;
         let getPassword = document.getElementById('password').value;
-        //Extraer del localStorage el array USUARIOS
-        const ARRAYUSERSSTRING = localStorage.getItem("USUARIOS");
-        const ARRAYUSERSOBJECTS = JSON.parse(ARRAYUSERSSTRING);
-
-        //Si existe en localStorage significa que creo un usuario, si no, logeara por los usuarios predefinidos que solo son dos
-        if(localStorage.getItem("USUARIOS")){
-            for (let i = 0; i < ARRAYUSERSOBJECTS.length; i++){
-                if(ARRAYUSERSOBJECTS.some(usuario => usuario.email === getEmail && usuario.password === getPassword)){
-                    //Coincidencia encontrada
-                    localStorage.setItem('logCorrecto', true);
-                    //Siento que no se deberia puesto que son datos sensibles pero momentaneamente me sirve
-                    //para que el usuario que se logeo, siempre diga sus datos
-                    localStorage.setItem('USER', getEmail);
-                    localStorage.setItem('PASS', getPassword);
-                    //Alerta y redirigir a otro HTML
-                    Swal.fire({
-                        icon: "success",
-                        title: "Iniciaste sesión correctamente",
-                        confirmButtonText:"aceptar",
-                        willClose: () => {
-                            window.location.href = '../index.html';
-                        }
-                    })
+    
+        //función asincrona para verificar las credenciales
+        function verificarCredenciales(){
+            return new Promise((resolve, reject)=>{
+                //Extraer del localStorage el array USUARIOS
+                const ARRAYUSERSSTRING = localStorage.getItem("USUARIOS");
+                const ARRAYUSERSOBJECTS = JSON.parse(ARRAYUSERSSTRING);
+    
+                if(ARRAYUSERSOBJECTS && ARRAYUSERSOBJECTS.some(usuario => usuario.email === getEmail && usuario.password === getPassword)){
+                    resolve();
                 }else{
-                    document.getElementById('mensajeLogin').innerHTML = "No estan correctos los datos ingresados";
-                    Swal.fire({
-                        icon: "error",
-                        title: "Datos incorrectos",
-                        text: "Por favor, verifica tus credenciales e intenta nuevamente.",
-                        position: "top-end",
-                        showConfirmButton: false,
-                        timer: 3000,
-                        timerProgressBar: true,
-                        didOpen: (toast) => {
+                    reject(new Error("Datos incorrectos"));
+                }
+            });
+        };
+    
+        // Llamar a la función asíncrona y manejar el resultado
+        verificarCredenciales()
+            .then(()=>{
+                //Guardar en localStorage los datos necesarios para un futuro hacer propaganda o si ya esta logeado que no muestra login
+                //si no que muestre otro panel con datos personales del usuario final
+                localStorage.setItem('logCorrecto', true);
+                localStorage.setItem('USER', getEmail);
+                localStorage.setItem('PASS', getPassword);
+                
+                //Credenciales correctas mostrar mensaje de exito y redirigir
+                Swal.fire({
+                    icon: "success",
+                    title: "Iniciaste sesión correctamente",
+                    confirmButtonText: "Aceptar",
+                    willClose: ()=>{
+                        window.location.href = '../index.html';
+                    }
+                });
+            })
+            .catch(error =>{
+                //Credenciales incorrectas mostrar mensaje de error
+                document.getElementById('mensajeLogin').innerHTML = "No están correctos los datos ingresados";
+                Swal.fire({
+                    icon: "error",
+                    title: "Datos incorrectos",
+                    text: error.message,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
                         toast.onmouseenter = Swal.stopTimer;
                         toast.onmouseleave = Swal.resumeTimer;
-                        }
-                    });
-                }
-            }
-        }else{
-            for (let i = 0; i < USERSARRAY.length; i++){
-                if(USERSARRAY.some(usuario => usuario.email === getEmail && usuario.password === getPassword)){
-                    //Coincidencia encontrada
-                    localStorage.setItem('logCorrecto', true);
-                    //Siento que no se deberia puesto que son datos sensibles pero momentaneamente me sirve
-                    //para que el usuario que se logeo, siempre diga sus datos
-                    localStorage.setItem('USER', getEmail);
-                    localStorage.setItem('PASS', getPassword);
-                    //Redirigir al index
-                    window.location.href = '../index.html'
-                }else{
-                    document.getElementById('mensajeLogin').innerHTML = "No estan correctos los datos ingresados";
-                }
-            }
-        }
+                    }
+                });
+            });
     });
+
+    //Lo primero que hara es crear en el localStorage USUARIOS siesque no lo tiene
     if(localStorage.getItem("USUARIOS") === null){
         const USERSARRAYJSON = JSON.stringify(USERSARRAY)
         localStorage.setItem("USUARIOS", USERSARRAYJSON); 
