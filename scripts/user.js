@@ -42,7 +42,7 @@ if(currentPage === "/GangaStore/pages/login.html"){
 
         //Si existe en localStorage significa que creo un usuario, si no, logeara por los usuarios predefinidos que solo son dos
         if(localStorage.getItem("USUARIOS")){
-            for (let i = 0; i < ARRAYUSERSOBJECTS.length; i++) {
+            for (let i = 0; i < ARRAYUSERSOBJECTS.length; i++){
                 if(ARRAYUSERSOBJECTS.some(usuario => usuario.email === getEmail && usuario.password === getPassword)){
                     //Coincidencia encontrada
                     localStorage.setItem('logCorrecto', true);
@@ -50,8 +50,15 @@ if(currentPage === "/GangaStore/pages/login.html"){
                     //para que el usuario que se logeo, siempre diga sus datos
                     localStorage.setItem('USER', getEmail);
                     localStorage.setItem('PASS', getPassword);
-                    //Redirigir a otro HTML
-                    window.location.href = '../index.html'
+                    //Alerta y redirigir a otro HTML
+                    Swal.fire({
+                        icon: "success",
+                        title: "Iniciaste sesión correctamente",
+                        confirmButtonText:"aceptar",
+                        willClose: () => {
+                            window.location.href = '../index.html';
+                        }
+                    })
                 }else{
                     document.getElementById('mensajeLogin').innerHTML = "No estan correctos los datos ingresados";
                     Swal.fire({
@@ -70,7 +77,7 @@ if(currentPage === "/GangaStore/pages/login.html"){
                 }
             }
         }else{
-            for (let i = 0; i < USERSARRAY.length; i++) {
+            for (let i = 0; i < USERSARRAY.length; i++){
                 if(USERSARRAY.some(usuario => usuario.email === getEmail && usuario.password === getPassword)){
                     //Coincidencia encontrada
                     localStorage.setItem('logCorrecto', true);
@@ -115,7 +122,7 @@ if(currentPage === "/GangaStore/pages/login.html"){
     };
 
     //Funcion para completar el menu desplegable de regiones
-    function populateRegionDropdown() {
+    function populateRegionDropdown(){
         const regionDropdown = document.getElementById('region');
         //Agregar opciones para cada region
         regions.forEach(region => {
@@ -127,7 +134,7 @@ if(currentPage === "/GangaStore/pages/login.html"){
     }
 
     //Funcion para completar el menu desplegable de comunas según la region seleccionada
-    function populateCommuneDropdown(selectedRegion) {
+    function populateCommuneDropdown(selectedRegion){
         const communeDropdown = document.getElementById('comuna');
         
         //Borrar opciones existentes
